@@ -1,0 +1,18 @@
+# Filtering out IDE specific folders
+.idea
+
+# Don't include the env files
+.env
+.env.*
+**/.env.*
+
+# Ignore mac files
+.DS_Store
+
+# Ignore R project files
+.Rproj.user
+*.Rproj
+
+# Ingnore the data files
+*.xlsx
+*.xls
