@@ -14,7 +14,7 @@ This script extracts and validates 10-digit CPR numbers from an Excel sheet's sp
 
 ## Running the Script
 
-Move the target excel sheet into same directory.
+Move the target Excel sheet into same directory.
 
 The script can be run using the following command:
 
