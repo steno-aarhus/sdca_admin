@@ -2,11 +2,12 @@ import sys
 import json
 from extractor import ExcelNumberExtractor
 from validation import Validation
+from generate_output import generate_excel_sheets
 
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python main.py <excel_file> [last_column]")
+        print("Usage: python check_cpr_number.py <excel_file> [last_column]")
         sys.exit(1)
 
     excel_file = sys.argv[1]
@@ -25,8 +26,8 @@ def main():
 
     print(f"Total rows in Excel sheet: {total_row_count}")
     print(f"Rows with 10-digit numbers: {row_count}")
-
-    output_data = []
+    print("Running CPR Number Validation Process...")
+    cpr_validation_result = []
 
     for row_num in range(1, total_row_count + 1):
         if row_num in numbers_with_rows:
@@ -49,12 +50,19 @@ def main():
         else:
             row_data = {
                 "row_number": row_num,
-                "numbers": "No 10 digit"
+                "numbers": [
+                    {
+                        "number": "None",
+                        "label": "No 10 digit"
+                    }
+                ]
             }
-        output_data.append(row_data)
+        cpr_validation_result.append(row_data)
 
-        # Print the JSON data
-    print(json.dumps(output_data, indent=4))
+    # Print the JSON data for testing only and
+    # will be removed for the fincal version
+    # print(json.dumps(cpr_validation_result, indent=4))
+    generate_excel_sheets(cpr_validation_result, excel_file, total_row_count)
 
 
 if __name__ == "__main__":
