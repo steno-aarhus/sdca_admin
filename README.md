@@ -1,47 +1,26 @@
-# CPR Number Check
+# SDCA Admin Helper Package
 
-This script extracts and validates 10-digit CPR numbers from an Excel sheet's specified column.
+This Python package contains code to help with a variety of admin tasks at Steno Aarhus. For instance:
 
-## Requirements
+1. To extract and validate 10-digit CPR numbers, from a Excel sheet we get from the Region's IT on possible CPR's in files.
 
-- Python 3.x
-- pandas library (can be installed using `pip install pandas`)
+## Installation
+
+You need a few software to install this package:
+
+- Python 3
+- Git
+
+After installing these packages, you can install this package by opening a Terminal (Git Bash in Windows) and running this command.
+
+```bash
+pip install git+https://github.com/steno-aarhus/sdca_admin.git
+```
 
 ## Usage
 
-1. Clone or download this repository to your local machine.
-2. Navigate to the repository's directory using your terminal/command prompt.
-
-## Running the Script
-
-Move the target excel sheet into same directory.
-
-The script can be run using the following command:
+(Incomplete)
 
 ```bash
-python check_cpr_number.py excel_file_name target_column_name
-```
-
-To use the default column name as "Linjeindhold for 1. fund"
-
-```bash
-python check_cpr_number.py excel_file_name
-```
-
-## Example Output
-```bash
-[
-    {
-        "row_number": 1,
-        "numbers": [
-            {"number": "1234567890", "label": "CPR Valid"},
-            {"number": "9876543210", "label": "invalid"}
-        ]
-    },
-    {
-        "row_number": 2,
-        "numbers": "No 10 digit number found"
-    },
-    ...
-]
+python -m sdca_admin
 ```
