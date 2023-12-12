@@ -2,7 +2,7 @@
 name = "sdca_admin"
 version = "0.1.0"
 description = "A helper package for streamlining and automating common Steno Aarhus tasks."
-authors = ["Luke W. Johnston", "Richard Ding"]
+authors = ["Luke W. Johnston"]
 license = "MIT"
 readme = "README.md"
 
